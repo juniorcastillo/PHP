@@ -18,7 +18,7 @@ and open the template in the editor.
         <?php
         if (isset($_POST["dato"])) {//Toma los datos de las variables del fromulario
             $pesetas = $_POST["peseta"];
-            $euros = (int) ( $pesetas / 166.38);
+            $euros = round( $pesetas / 166.38);
             
             echo "<h1> Resultado del conversor </h1> <p>";
             echo $pesetas . " Pesetas son: " . $euros . " euros. </p>";
