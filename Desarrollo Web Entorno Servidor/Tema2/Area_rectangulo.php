@@ -12,7 +12,7 @@ Escribe un programa que calcule el área de un rectángulo.
          <form method="post" action="Area_rectangulo.php">
             <p> Por favor, introduce la base y la atura:</p>
             <input type="number" name="base"><br>
-            <input type="number" name="altura"><br>
+            <input type="number" name="altura" step="1"><br>
             <input type="submit" name="dato" value="Aceptar">
         </form>
         <?php
