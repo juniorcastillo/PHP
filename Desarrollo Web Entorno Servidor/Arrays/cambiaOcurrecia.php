@@ -8,31 +8,46 @@ Los números que se han cambiado deben aparecer resaltados de un color diferente
     <head>
         <meta charset="UTF-8">
         <title></title>
+        <style>
+            
+            span{
+                
+                color:red;
+            }
+        </style>
     </head>
     <body>
         <h1>Array aleatorio</h1>
         <?php
-         for ($i = 0; $i < 100; $i++) {
+        for ($i = 0; $i < 100; $i++) {
             $numero[$i] = rand(0, 20);
-            echo $numero[$i] . " " ;
-         }
-         
-        if((isset($_REQUEST['numero1'])) && (isset($_REQUEST['numero1']))){
-            
-            
-            
-        }else{ 
-         
-        ?>
-        
-         <h1>Introduzca 2 numeros por teclado:</h1>
-         <form action="cambiaOcurrecia.php" method="get">
+            echo $numero[$i] . " ";
+        }
+        echo "<br><br> <h1>Array cambiado</h1>";
+        if ((isset($_REQUEST['numero1'])) && (isset($_REQUEST['numero1']))) {
+            $valor1 = $_REQUEST['numero1'];
+            $valor2 = $_REQUEST['numero2'];
 
 
-                <input type="number" name ="numero1" autofocus>
-                <input type="number" name ="numero2" autofocus>
+            for ($i = 0; $i < count($numero); $i++) {//Cambio el valor1 por el valor2
+                if ($numero[$i] == $valor1) {
+                    $numero[$i] = $valor2;
+                    echo "<span>" .$numero[$i] . "</span> ";
+                } else {
+                    echo $numero[$i] . " ";
+                }
+            }
+        } else {
+            ?>
+
+            <h1>Introduzca 2 numeros por teclado:</h1>
+            <form action="cambiaOcurrecia.php" method="get">
+
+
+                <input type="number" name ="numero1" autofocus required>
+                <input type="number" name ="numero2"  required>
                 <input type="submit" value="OK">
             </form>
-        <?php }?>
+        <?php } ?>
     </body>
 </html>
