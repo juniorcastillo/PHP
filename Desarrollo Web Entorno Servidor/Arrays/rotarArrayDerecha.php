@@ -22,11 +22,11 @@ muestra el contenido del array.
 
             $numero = $_REQUEST['numero']; //Tomo los numeros introducido
             $contador = $_REQUEST['contador']; //Cuento las veces que han introducido numeros
-            echo "veces: $contador <br>";
+            echo "veces: $contador <br><br>";
             $numeroTexto = $_REQUEST['numeroTexto']; //Guardo la variable que pego los numeros y se le agrega un espacio de mas
             $guardar = explode(" ", $numeroTexto); //Guardos los numeros en el arrray
-
-            if ($contador <= 5) {//Cuento las veces 
+            //El contador empieza desde 1
+            if ($contador <= 15) {//Cuento las veces 
                 echo 'Los que pego ' . $numeroTexto . '<br>';
                 echo 'El array ' . $guardar[$contador];
             } else {//Muestro el array
@@ -49,7 +49,7 @@ muestra el contenido del array.
     </head>
     <body>
         <?php
-        if ($contador <= 5) {
+        if ($contador <= 15) {
             ?>
             <h1>Introduzca 15 numeros por teclado:</h1>
             <form action="rotarArrayDerecha.php" method="get">
