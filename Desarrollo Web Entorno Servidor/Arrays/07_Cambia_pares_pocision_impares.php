@@ -12,7 +12,7 @@ si es necesario.
     </head>
     <body>
 
-        <h1>Array aleatorio</h1>
+        <h1>Array normal</h1>
         <?php
         
         $aux=[];

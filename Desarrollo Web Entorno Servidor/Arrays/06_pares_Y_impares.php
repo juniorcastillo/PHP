@@ -66,7 +66,7 @@ pares de un color y los impares de otro.
         if ($contador <=8) {
             ?>
             <h1>Introduzca 8 numero por teclado</h1>
-            <form action="pares_Y_impares.php" method="get">    
+            <form action="#" method="get">    
 
                 <input type="number" name ="numero" autofocus>
                 <input type="hidden" name="contador" value="<?= ++$contador ?>">

@@ -59,7 +59,7 @@ junto con las palabras “máximo” y “mínimo” al lado del máximo y del m
   // Pide número y añade el actual a la cadena
   if (($contadorNumeros < 10) || (!isset($n))) {
     ?>
-    <form action="Piede10NumerosTeclado.php" method="get">    
+    <form action="#" method="get">    
       Introduzca un número:
       <input type="number" name ="n" autofocus>
       <input type="hidden" name="contadorNumeros" value="<?= ++$contadorNumeros ?>">
