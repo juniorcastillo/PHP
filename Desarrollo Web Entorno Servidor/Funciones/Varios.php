@@ -15,7 +15,7 @@ and open the template in the editor.
         <form action="Varios.php" method="post">
             <label for="dato1">valor1</label>	
             <input type="text" name="dato1" id="dato1">
-            <label for="dato1">valor2</labe>
+            <label for="dato1">valor2</label>
                 <input type="text" name="dato2" id="dato2"><br>
                 <button name="aceptar" >Enviar</button><br>
 
