@@ -1,10 +1,10 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['contador'])) {
+if (!isset($_SESSION['contador03'])) {
 
     $_SESSION['suma'] = 0;
-    $_SESSION['contador'] = 0;
+    $_SESSION['contador03'] = 0;
     $_SESSION['comprueba'] = true;
 } else {
     ?>
@@ -28,7 +28,7 @@ if (!isset($_SESSION['contador'])) {
             if ($_SESSION['suma'] < 10000) {
 
 
-                        echo "contador " . $_SESSION['contador'] +=1 ;
+                        echo "contador " . $_SESSION['contador03'] +=1 ;
                         
                      
                         
@@ -38,7 +38,7 @@ if (!isset($_SESSION['contador'])) {
                    echo '<h1>Entra aqui: </h1> ';
                         //Divide el resultado de la suma y saca la media y la muestra
                       
-                       $media= $_SESSION['suma'] / $_SESSION['contador'];
+                       $media= $_SESSION['suma'] / $_SESSION['contador03'];
                        echo '<h1>Esta es el total acumulado: </h1> ' .  $_SESSION['suma'] . "<br>";
                        echo '<h1>Esta es la media del total: </h1> ' .  $media . "<br>";
                  
@@ -56,8 +56,8 @@ if (!isset($_SESSION['contador'])) {
         <?php
         if ($_SESSION['comprueba']) {//Mientas el numero introducido es mayor o igual que 0 just do it
             ?>
-            <h1>please, introducir numeros cuando la suma de los numero sea mayor que 10000 se detiene </h1>
-            <form action="#" method="GET">
+            <h1>Please, introducir numeros. Cuando la suma de los numero sea mayor que 10000 se detiene </h1>
+            <form action="03_noSuperere10000.php" method="GET">
                 <input type="number" name="numero" autofocus >     
                 <input type="submit" value="Aceptar">
 
@@ -67,7 +67,7 @@ if (!isset($_SESSION['contador'])) {
 //Este es el boton que cierra la sesion creada
         ?>
 
-        <br><form action="#" method="GET">  
+            <br><form action="03_noSuperere10000.php" method="GET">  
 
             <button name="cerrar" > close session</button>     
 
