@@ -1,0 +1,49 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 19-oct-2016, 15:42:17
+    Author     : USER
+*/
+
+body{
+    margin: 0px;
+    padding: 0px;
+    background-color:aquamarine;
+}
+
+#capa1{
+  float: left;
+  width: 29%;
+  height: 674px;
+  margin-left: 121px;
+  border: 1px black solid;  
+  background-color:rgba(87,199,255,0.5);
+
+ 
+    
+}
+#capa2{
+  float: right;
+  width: 29%;
+  height: 674px;
+  margin-right: 50px;
+  border: 1px black solid;  
+  background-color:rgba(87,199,255,0.5);
+
+ 
+    
+}
+h1{
+      text-align: center;
+}
+#tabla1{
+
+  margin-left: 10px;
+}
+#tabla2{
+
+    margin-left: 10px;
+}

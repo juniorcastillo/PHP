@@ -53,7 +53,7 @@ con un nombre de usuario y contraseña correctos.
 
 
                 $_SESSION['accesopermitido'] = true;
-                $_SESSION['mal'] == false;
+                $_SESSION['mal'] == false;//Comprueba si esta mala la contraeña
                 if ($_SESSION['pagina1'] == true) {
                     echo '<script type="text/javascript">
                                 alert("Has iniciado sesion correctamente");
