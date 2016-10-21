@@ -39,16 +39,18 @@ pares de un color y los impares de otro.
             $guardar = explode(" ", $numeroTexto);
 
             //El contador empieza desde 1
-            if ($contador <= 8) {//Cuento las veces 
+            if ($contador <8) {//Cuento las veces 
                 // 
                 //Muestro como se van pegadolos numeros
                 echo 'Los que pego ' . $numeroTexto . '<br>';
                 //Muestro los numeros que se van guardando en el array
                 echo 'El array ' . $guardar[$contador];
             } else {
+                //Creo el array 
+                 $guardar = explode(" ", $numeroTexto . " ".  $numero );
                 //Elimina el espacio que se guarda en la posicion 0
                 array_shift($guardar);
-
+               
 
                 for ($i = 0; $i < count($guardar); $i++) {//Muestro el array
                     if (($guardar[$i] % 2) == 0) {
@@ -63,7 +65,7 @@ pares de un color y los impares de otro.
             }
         }
 
-        if ($contador <=8) {
+        if ($contador <8) {
             ?>
             <h1>Introduzca 8 numero por teclado</h1>
             <form action="#" method="get">    

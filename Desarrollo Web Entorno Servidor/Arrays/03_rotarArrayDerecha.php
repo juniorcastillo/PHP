@@ -24,12 +24,13 @@ muestra el contenido del array.
             $contador = $_REQUEST['contador']; //Cuento las veces que han introducido numeros
             echo "veces: $contador <br><br>";
             $numeroTexto = $_REQUEST['numeroTexto']; //Guardo la variable que pego los numeros y se le agrega un espacio de mas
-            $guardar = explode(" ", $numeroTexto); //Guardos los numeros en el arrray
+          
             //El contador empieza desde 1
-            if ($contador <= 15) {//Cuento las veces 
+            if ($contador < 15) {//Cuento las veces 
                 echo 'Los que pego ' . $numeroTexto . '<br>';
                 echo 'El array ' . $guardar[$contador];
             } else {//Muestro el array
+                 $guardar = explode(" ", $numeroTexto . " ". $numero); //Guardos los numeros en el arrray
                 unset($guardar[0]);//Elimina el espacio que se guarda en la posicion 0
                 $posUtima = array_pop($guardar); //Guardo el  valor de la ultima posicion del array y el array (es como si le eliminara ese valor)
               
@@ -49,10 +50,10 @@ muestra el contenido del array.
     </head>
     <body>
         <?php
-        if ($contador <= 15) {
+        if ($contador <15) {
             ?>
             <h1>Introduzca 15 numeros por teclado:</h1>
-            <form action="rotarArrayDerecha.php" method="get">
+            <form action="#" method="get">
 
 
                 <input type="number" name ="numero" autofocus>
