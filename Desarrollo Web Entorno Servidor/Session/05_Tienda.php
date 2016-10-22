@@ -11,7 +11,6 @@ if (!isset($_SESSION['producto'])) {
   );
 
   $_SESSION['cuentacompra'] = 0;
- 
 }
 ?>
 <!DOCTYPE html>
@@ -62,17 +61,17 @@ carrito de la compra. A continuación se muestra una captura de pantalla de una 
 
           </tr>
           <tr>
-
+            <!-- hago la compra para añadirlo al carrito-->
             <td><form action="05_Tienda.php" method="get">
 
 
                 <input type="hidden" name="accion" value="comprar">
                 <input type="hidden" name="compra" value="<?= $key ?>">
                 <button name="boton" type="submit" value="ok">Comprar</button>
-              </form></td>
-         <!-- Expancion del ejercicio agregar le el botton detalle-->
-            <td><form action="05_Tienda.php" method="get">
-                 <input type="hidden" name="accion" value="detalles">
+              </form>
+            <!-- Expancion del ejercicio agregar le el botton detalle-->
+            <form action="detalleproducto.php" method="get">
+                <input type="hidden" name="accion" value="detalles">
                 <input type="hidden" name="compra" value="<?= $key ?>">
                 <button name="boton" type="submit" value="ok">Detalle</button>
               </form></td>
@@ -84,7 +83,7 @@ carrito de la compra. A continuación se muestra una captura de pantalla de una 
 
       </table>
     </div>
-     <div id="capa2">  
+    <div id="capa2">  
       <table id="tabla2"> 
         <tr>
           <td>Carrito </td>
@@ -92,63 +91,69 @@ carrito de la compra. A continuación se muestra una captura de pantalla de una 
         </tr>
         <?php
         if (isset($_REQUEST['boton'])) {
-          
-            $clave = $_REQUEST['compra'];
-            $accion = $_REQUEST['accion'];
-      
-         // Inicializa el carrito la primera vez
+
+          $clave = $_REQUEST['compra'];
+          $accion = $_REQUEST['accion'];
+
+          // Inicializa el carrito la primera vez
           if (!isset($_SESSION['carrito'])) {
-            $_SESSION['carrito'] = array ("ps1" => 0, "ps2" => 0, "ps3" => 0);
+            $_SESSION['carrito'] = array("ps1" => 0, "ps2" => 0, "ps3" => 0);
           }
 
-        //Incremento las unidades del producto comprado
-        if ($accion == "comprar") {
-          $_SESSION['carrito'][$clave]++;
-        }
-       //Elimino el producto comprado
-        
-         if ($accion == "eliminar") {
-          $_SESSION['carrito'][$clave]=0;
-        }
-        //Pinto los productos que estan en el carrito
-        $total=0;
-        foreach ($_SESSION['producto'] as $key => $value) {
-         $total+= $value['precio'] * $_SESSION['carrito'][$key] ;
-          
-          if ($_SESSION['carrito'][$key] > 0) {
-            
-            echo '<tr><td><img src="' . $value['imagen'];
-            echo '" alt="Smiley face" height="100" width="150"> </td>  </tr>';
-            echo '<tr><td>' . $value['nombre'] . '</td> </tr>';
-            echo '<tr><td>Precio:' . $value['precio'] . '€</td> </tr>';
-            echo '<tr><td>  Unidades: ' .$_SESSION['carrito'][$key] . '</td> </tr>';
-           //Creo el boton eliminar 
-         ?>
-          <tr>
-
-            <td><form action="05_Tienda.php" method="get">
-
-
-                <input type="hidden" name="accion" value="eliminar">
-                <input type="hidden" name="compra" value="<?= $key ?>">
-                <button name="boton" type="submit" value="ok">Eliminar</button>
-              </form></td>
-
-          </tr>
-        
-        
-        <?php
+          //Incremento las unidades del producto comprado
+          if ($accion == "comprar") {
+            $_SESSION['carrito'][$clave] ++;
           }
+          //Elimino el producto comprado
+
+          if ($accion == "eliminar") {
+            $_SESSION['carrito'][$clave] = 0;
+          }
+          if (isset($_REQUEST['cerrar'])) {
+            session_destroy();
+            header("refresh: 0;"); // refresca la página
+          }
+          //Pinto los productos que estan en el carrito
+          $total = 0;
+          foreach ($_SESSION['producto'] as $key => $value) {
+            $total+= $value['precio'] * $_SESSION['carrito'][$key];
+
+            if ($_SESSION['carrito'][$key] > 0) {
+
+              echo '<tr><td><img src="' . $value['imagen'];
+              echo '" alt="Smiley face" height="100" width="150"> </td>  </tr>';
+              echo '<tr><td>' . $value['nombre'] . '</td> </tr>';
+              echo '<tr><td>Precio:' . $value['precio'] . '€</td> </tr>';
+              echo '<tr><td>  Unidades: ' . $_SESSION['carrito'][$key] . '</td> </tr>';
+              //Creo el boton eliminar 
+              ?>
+              <tr>
+
+                <td><form action="05_Tienda.php" method="get">
+
+
+                    <input type="hidden" name="accion" value="eliminar">
+                    <input type="hidden" name="compra" value="<?= $key ?>">
+                    <button name="boton" type="submit" value="ok">Eliminar</button>
+                  </form></td>
+
+              </tr>
+
+
+              <?php
+            }
+          }
+          //Vacio el carrito de la compra
+          echo '<tr><td></td> </tr>';
+          echo '<tr><td></td> </tr>';
+
+          echo '<tr><td><b>Total:' . $total . '€</b></td> </tr>';
+          echo '<tr><td><form action="05_Tienda.php" method="GET">  
+                        <button name="cerrar" >Vaciar </button>     
+                        </form></td> </tr>';
         }
-        echo '<tr><td></td> </tr>';
-        echo '<tr><td></td> </tr>';
-        echo '<tr><td></td> </tr>';
-         
-        echo '<tr><td><b>Total:' . $total . '€</b></td> </tr>';
-      }
-      
         ?>
-    
+
       </table>
     </div>
   </body>
