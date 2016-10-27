@@ -38,15 +38,18 @@ Se podrán añadir productos al carrito tanto desde la vista de listado como des
           echo "<tr><td><b>Nombre del prodcuto:</b> " . $value['nombre'] . '.</td></tr>';
           echo "<tr><td><b>Tipo de producto:</b> Video Game. </td></tr>";
           echo "<tr><td><b>Estado del prodcuto:</b> Son nuevos de caja. </td></tr>";
+//---------------Genero los botones comprar  y regresar----------------------------------------------
           echo '<tr>
             <!-- hago la compra para añadirlo al carrito-->
              <td><form action="detalleproducto.php" method="get">
+               <input type="hidden" name="accion" value="comprar">
+               <input type="hidden" name="compra" value="' .$key .'">
+               <button name="botondetalle" type="submit" value="ok">Comprar</button>
+               
+             </form></td><td>  
 
-
-                <input type="hidden" name="accion" value="comprar">
-                <input type="hidden" name="compra" value="' .$key .'">
-                <button name="botondetalle" type="submit" value="ok">Comprar</button>
-               </form></td></tr>';
+               <a href="05_Tienda.php?accion=nada"><button>Regresar</button></a>
+               </td></tr>';
         }
       }
        
