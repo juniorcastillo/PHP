@@ -1,0 +1,58 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 20-dic-2016, 18:17:35
+    Author     : Junior Miguel Castillo Santana
+*/
+
+ * {
+        margin: 0;
+        padding: 0;
+        outline: none;
+        border: none;
+        -webkit-box-sizing: border-box; }
+      *:before, *:after {
+        -webkit-box-sizing: border-box;
+        -o-box-sizing: border-box; }
+
+
+
+      header{
+        display: flex;
+        max-width:100%;
+        height:500px;
+        background-color:blanchedalmond;
+
+      }
+      header #tilulo{
+        position: absolute;
+        color: #192b2b;
+        left: 42%;
+        top: 455px;
+      }
+
+      
+      header img{
+        width:100%;
+        height:90%;
+        border-radius: 10%;
+
+      }
+      section {
+        display: flex;
+        flex-wrap:wrap;
+      }
+      section article{
+        overflow: hidden;
+        width:25%;
+        border:aqua solid 2px;
+        margin:2% 4%;
+        text-align: center;
+
+      }
+      section article h2{
+        text-decoration: underline;
+      }
