@@ -45,12 +45,3 @@ and open the template in the editor.
         </tr>
         <tr>
           <th>Vendedor</th>
-          <td> <input type="number" name="vendedor" id="vendedorModificar" value=""></td>
-        </tr>
-      </form>
-
-    </table>
-
-
-  </body>
-</html>
