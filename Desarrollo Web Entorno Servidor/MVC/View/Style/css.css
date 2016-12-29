@@ -56,3 +56,35 @@ and open the template in the editor.
       section article h2{
         text-decoration: underline;
       }
+      .fecha{
+        width:50%;
+        background-color: darkgray;
+       margin-left: 25%;
+      }
+      .boton {
+       width: 35%;
+       background-color: aqua;
+       margin-left: 10px;
+       border-radius: 100%;
+       display: inline-block;
+       margin-top: 5px;
+       
+      }
+       .boton:hover {
+         background-color: black;
+       }
+       .boton a{
+         text-decoration: none;
+        
+       }
+       .boton a:hover{
+         color: cornsilk;
+        
+       }
+      footer{
+        width: 100%;
+        height: 30px;
+        background-color: antiquewhite;
+        text-align: center;
+        padding-top: 10px;
+      }
