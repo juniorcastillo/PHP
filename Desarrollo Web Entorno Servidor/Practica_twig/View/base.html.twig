@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+ @author Junior Miguel Castillo Santana
+-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link type="text/css" rel="stylesheet" href="../View/css/style.css">
+        <link rel="stylesheet" type="text/css" href="../View/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../View/css/bootstrap-theme.min.css">
+        <title>Mi Blog</title>
+    </head>
+    <body>
+        <div class="container">
+            <div id="cabeza">
+
+
+               <h1 id="tilulo">Animals blog</h1>
+
+              <img src="../View/img/head_1.jpg" alt="Animales">
+            </div>
+           
+            <header class="header">
+           
+
+                <nav class="navbar navbar-inverse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="../Controller/index.php">Principal</a></li>
+                        <li><a href="../Controller/anadir.php">Añadir Post</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+        
+        {% block contenido %}
+        {% endblock contenido %}
+        
+        <div class="container container-inverse">
+            <footer>
+                <p class="autor">&copy; <em>Junior Castillo</em></p>
+            </footer>
+        </div>
+
+    </body>
+</html>

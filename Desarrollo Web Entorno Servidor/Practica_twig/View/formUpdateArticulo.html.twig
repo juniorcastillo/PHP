@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+{% block contenido %}
+<div class="container">
+    <section class="form">
+        <h2 class="page-header">Modificar Post</h2>
+        <form action="../Controller/modificaArticulo.php" method="post">
+            <div class="form-group">
+            <h4>Titulo:</h4>
+            <input class="form-control" type="text" name="tituloUpdate" value="{{titulo}}" autofocus>
+            </div>
+            <div class="form-group">
+            <h4>Descripcion:</h4>
+            <textarea class="form-control" name="descripcionUpdate" value="{{articulo}}">{{articulo}}</textarea>
+            </div>
+            <div class="form-group">
+            Autor: 
+            <input class="form-control" type="text" name="autorUpdate" value="{{autor}}" >
+            </div>
+            <div class="form-group">
+            Categoria:
+            <input class="form-control" type="text" name="categoriaUpdate" value="{{categoria}}">
+            </div>
+            <input type="hidden" name="id" value="{{id}}">
+            <input class="btn btn-primary" type="submit" name="update" value="Modificar">
+        </form>
+    </section>
+</div>
+{% endblock contenido %}
